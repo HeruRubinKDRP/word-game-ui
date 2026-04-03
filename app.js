@@ -3,7 +3,7 @@
 // ===============================
 
 // Change this to your real deployed Vercel API URL when needed
-const API_BASE_URL = "http://localhost:3000";
+const API_BASE_URL = "https://word-game-api.vercel.app/";
 
 // ===============================
 // DOM references
