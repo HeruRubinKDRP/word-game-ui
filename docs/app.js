@@ -1,13 +1,13 @@
-// ===============================
+// =====***==========================
 // Configuration
-// ===============================
+// ======****=================
 
-// Change this to your real deployed Vercel API URL when needed
+// Change this is the deployed Vercel API URL
 const API_BASE_URL = "https://word-game-api.vercel.app";
 
-// ===============================
+// ====****===========================
 // DOM references
-// ===============================
+// ==========*****=====================
 const guessInputEl = document.getElementById("guess-input");
 const submitGuessEl = document.getElementById("submit-guess");
 const boardEl = document.getElementById("board");
@@ -21,9 +21,9 @@ const gameModalTextEl = document.getElementById("game-modal-text");
 const playAgainButtonEl = document.getElementById("play-again-button");
 
 
-// ===============================
+// ==**=============================
 // Game state
-// ===============================
+// =====****==========================
 
 
 // Tracks the best-known status of each letter on the keyboard
@@ -38,7 +38,7 @@ let letterStatuses = {};
 //overall game state
 let isGameOver = false;
 
-// This will hold the secret target word from your API
+// This will hold the secret target word from the API
 let targetWord = "";
 
 // These values define the Wordle-style board size
@@ -54,9 +54,9 @@ let currentGuess = "";
 // This tracks which row the player is currently on
 let currentRow = 0;
 
-// ===============================
+// ====***===========================
 // Helper functions
-// ===============================
+// =====***==========================
 
 /**
  * Show the full-screen game result modal.
@@ -189,7 +189,7 @@ async function fetchTargetWord() {
 
     const data = await response.json();
 
-    // We expect the API to return something like: { word: "crane" }
+    // API to return : { word: "crane" }
     return data.word;
 }
 
@@ -209,8 +209,8 @@ async function startGame() {
 
         targetWord = await fetchTargetWord();
 
-        // For now, log it so we can confirm everything works.
-        // Later, remove this once gameplay is finished.
+
+        // Logging so i can see the word for faster testing purposes.
         console.log("Target word:", targetWord);
 
         setMessage("Game ready! Typing comes next.");
@@ -379,9 +379,9 @@ function createKeyboard() {
     }
 }
 
-// ===============================
+// ===****============================
 // Event listeners
-// ===============================
+// ===**=======*=====================
 
 startButtonEl.addEventListener("click", startGame);
 submitGuessEl.addEventListener("click", handleSubmitGuess);
