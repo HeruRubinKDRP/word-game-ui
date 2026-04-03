@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wordle Clone</title>
+    <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+<main class="app">
+    <h1><img class="logo" src="images/logo.png" alt="not-wordle"></h1>
+
+    <!-- Small status area for helpful messages -->
+    <p id="message">Click "Start Game" to load a word.</p>
+
+    <!-- Button to begin / reset the game -->
+    <button class="action" id="start-button">Start Game</button>
+
+    <!-- This is where we will render the 6 rows x 5 columns board -->
+    <section id="board" class="board"></section>
+
+    <!-- Simple input for entering a guess -->
+    <div class="input-area">
+        <input
+                id="guess-input"
+                type="text"
+                maxlength="5"
+                placeholder="Enter 5-letter word"
+        />
+        <button class="action" id="submit-guess">Submit</button>
+    </div>
+    <section id="keyboard" class="keyboard"></section>
+</main>
+<div id="game-modal" class="game-modal hidden">
+    <div class="game-modal-content">
+        <h2 id="game-modal-title">Game Over</h2>
+        <p id="game-modal-text">Result message goes here.</p>
+        <button class="action" id="play-again-button">Play Again</button>
+    </div>
+</div>
+<script src="./app.js"></script>
+</body>
+</html>
